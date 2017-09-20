@@ -1,0 +1,16 @@
+.logo {
+	width: 30px;
+	height: 30px;
+}
+
+body {
+	background-image: url("../images/background_vintage.png");
+}
+
+.nav-head {
+	background-color: #ffffff;
+}
+
+#name {
+	background-color: #4aaaa5;
+}
