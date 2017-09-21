@@ -15,6 +15,11 @@ body {
 	color: #777777;
 }
 
+section {
+	width: 960px;
+	margin:auto;
+}
+
 img {
 	float: left;
 	padding-right: 20px;
@@ -47,46 +52,53 @@ h2 {
 .left-float {
 	float: left;
 	width: 610px;
-	background-color: #ffffff;
-	margin-bottom: 30px;
 	padding: 20px;
-	border: 1px solid #cccccc;
-	line-height: 25px;
+	line-height: 1.6em;
 }
 
-
+.border-right {
+	border-right: 1px solid #cccccc;
+}
 .right-float {
 	float: right;
 	width: 230px;
+	padding: 20px;
+
+}
+nav {
+	padding-top: 40px;
+}
+
+.float {
+	border: 1px solid #cccccc;
 	background-color: #ffffff;
 	margin-bottom: 30px;
-	padding: 20px;
-	border: 1px solid #cccccc;
 }
 .nav-head {
 	background-color: #ffffff;
-	height: 100px;
+	height: 90px;
 	text-align: right;
-	width: 100%;
 	margin-bottom: 30px;
-	position: relative;
 	border-bottom: 2px solid #cccccc;
-
 }
 
+a {
+	color: #777777;
+	text-decoration: none;
+	padding: 0px 10px;
+}
 
 #name {
 	font-family: "Georgia", "Times New Roman", Times, Serif;
 	background-color: #4aaaa5;
-	float: left;
 	color: #ffffff;
-	position: absolute;
-	bottom: 0px;
-	left: 10px;
-	padding: 40px 35px;
-	vertical-align: middle;
+	width: 250px;
+	padding-top: 32.5px;
+	padding-bottom: 32.5px;
 	font-size: 25px;
+	float: left;
 	font-weight: bold;
+	text-align: center;
 
 }
 
@@ -98,6 +110,7 @@ footer {
 	text-align: center;
 	border-top: 5px solid #4aaaa5;
 	margin-top: 30px;
+	color: #cccccc;
 
 }
 
