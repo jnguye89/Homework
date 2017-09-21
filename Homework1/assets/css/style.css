@@ -88,6 +88,7 @@ a {
 	padding: 0px 10px;
 }
 
+
 #name {
 	font-family: "Georgia", "Times New Roman", Times, Serif;
 	background-color: #4aaaa5;
@@ -114,3 +115,23 @@ footer {
 
 }
 
+button {
+	background-color: #4aaaa5;
+	color: white;
+	border: 0px;
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+input {
+	width: 600px;
+	height: 25px;
+	color:#777777;
+	padding: 2px;
+	font-size: 14px;
+}
+
+#message-input {
+	height: 200px;
+}
