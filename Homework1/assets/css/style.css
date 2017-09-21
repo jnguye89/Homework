@@ -114,6 +114,20 @@ footer {
 	color: #cccccc;
 
 }
+.portfolio-img {
+	position: relative;
+	padding:20px;
+}
+
+
+.description {
+	position: absolute;
+	width: 260px;
+	height: 50px;
+	background-color: #4aaaa5;
+	color:white;
+	bottom: 10px;
+}
 
 button {
 	background-color: #4aaaa5;
