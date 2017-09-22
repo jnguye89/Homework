@@ -1,6 +1,6 @@
 .logo {
-	width: 30px;
-	height: 30px;
+	width: 35px;
+	height: 35px;
 }
 
 body {
@@ -20,7 +20,7 @@ section {
 	margin:auto;
 }
 
-img {
+#Profile_picture{
 	float: left;
 	padding-right: 20px;
 	padding-bottom: 20px;
@@ -114,20 +114,7 @@ footer {
 	color: #cccccc;
 
 }
-.portfolio-img {
-	position: relative;
-	padding:20px;
-}
 
-
-.description {
-	position: absolute;
-	width: 260px;
-	height: 50px;
-	background-color: #4aaaa5;
-	color:white;
-	bottom: 10px;
-}
 
 button {
 	background-color: #4aaaa5;
@@ -149,3 +136,26 @@ input {
 #message-input {
 	height: 200px;
 }
+
+.portfolio-img {
+	float: left;
+	padding:20px;
+}
+
+.img-container {
+	position: relative;
+	float: left;
+}
+
+.description {
+	position: absolute;
+	bottom: 40px;
+	left: 20px;
+	width: 260px;
+	background-color: #4aaaa5;
+	text-align: center;
+	height: 50px;
+	color: white;
+	font-size: 20px;
+}
+
