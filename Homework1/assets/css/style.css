@@ -23,7 +23,6 @@ section {
 #Profile_picture{
 	float: left;
 	padding-right: 20px;
-	padding-bottom: 20px;
 }
 
 h2 {
@@ -149,13 +148,15 @@ input {
 
 .description {
 	position: absolute;
-	bottom: 40px;
+	bottom: 30px;
 	left: 20px;
 	width: 260px;
 	background-color: #4aaaa5;
 	text-align: center;
-	height: 50px;
+	height: 40px;
 	color: white;
 	font-size: 20px;
+	font-family: "Georgia", "Times New Roman", Times, Serif;	
+	padding-top: 10px;
 }
 
