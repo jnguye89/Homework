@@ -130,6 +130,7 @@ input {
 	color:#777777;
 	padding: 2px;
 	font-size: 14px;
+	border-color: 2px solid #cccccc;
 }
 
 #message-input {
@@ -161,19 +162,142 @@ input {
 }
 
 @media screen and (max-width: 980px) {
+	#body {
+		width: 95%;
+		margin: 0 auto;
+		color: #777777;
+	}
 
+	section {
+		width: 95%;
+		margin:auto;
+	}
 
+	#header {
+		width: 100%	;
+	}
+
+	.left-float {
+		float: left;
+		width: 70%;
+		padding: 20px;
+		line-height: 1.6em;
+	}
+
+	.right-float {
+		float: right;
+		width: 15%;
+		padding: 20px;
+
+	}
+	input {
+		width: 95%;
+		border-color: 1px solid #777777;
+	}
 }
 
 
 @media screen and (max-width: 768px) {
+	#body {
+		width: 95%;
+		margin: 0 auto;
+		color: #777777;
+	}
 
+	section {
+		width: 95%;
+		margin:auto;
+	}
+
+	#header {
+		width: 95%;
+	}
+
+	.left-float {
+		width: 95%;
+		padding: 20px;
+		line-height: 1.6;
+		float: none;
+	}
+
+	.right-float {
+		width: 95%;
+		padding: 20px;
+		float: none;
+
+	}
+
+	input {
+		width: 95%;
+		border-color: 1px solid #777777;
+	}
+	#left-float {
+		height: 800px;
+	}
 
 }
 
 @media screen and (max-width: 640px) {
 
+	#body {
+		width: 95%;
+		position: static;
+	}
+
+	section {
+		width: 95%;
+		margin:auto;
+	}
+
+	#header {
+		width: 95%;
+	}
+
+	.left-float {
+		width: 95%;
+		padding: 20px;
+		line-height: 1.6;
+		float: none;
+	}
+
+	.right-float {
+		width: 95%;
+		padding: 20px;
+		float: none;
+	}
 	
+	#name {
+		width: 100%;
+		text-align: center;
+		float: none;
+
+	}
+
+	#navbar {
+		background-color: #ffffff;
+		text-align: center;
+		padding-top:25px;
+		padding-bottom: 10px;
+	}
+
+	.justify {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	.nav-head {
+		height: 150px;
+	}
+
+	input {
+		width: 95%;
+		border-color: 1px solid #777777;
+	}
+	
+	#left-float {
+		height: 1275px;
+	}
+
 }
 
 
