@@ -1,0 +1,77 @@
+body {
+	background-image: url("../images/background_vintage.png");
+	font-family: "Arial", "Helvetica Neue", Helvetica, Sans-serif;
+	color: #777777;
+}
+
+.about {
+	color: #4aaaa5;
+	font-family: "Georgia", "Times New Roman", Times, Serif;
+	font-size: 30px;
+	border-bottom: 1px solid #cccccc;
+	font-weight: bold;
+}
+
+#Profile_picture {
+	float: left;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+h1 {
+	color: #ffffff;
+	font-family: "Georgia", "Times New Roman", Times, Serif;
+	margin-top: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+p {
+	line-height: 1.6em;
+}
+
+.logo {
+	height: 30px;
+	width: 30px;
+}
+.connect {
+	color: #4aaaa5;
+	font-family: "Georgia", "Times New Roman", Times, Serif;
+	font-size: 20px;
+	border-bottom: 1px solid #cccccc;
+	font-weight: bold;
+}
+
+.panel-body {
+	margin-left: 20px;
+	margin-right: 20px;
+
+}
+
+.container {
+	max-width: 960px;
+}
+
+.left-side {
+	background-color: #ffffff;
+
+}
+
+.right-side {
+	background-color: #ffffff;
+}
+
+.navbar-nav {
+	float: right;
+	height: 75px;
+}
+
+.container-fluid{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.navbar-brand {
+	background-color: #4aaaa5;
+	height: 75px;
+}
