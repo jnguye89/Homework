@@ -24,10 +24,14 @@ h1 {
 	margin-top: 0px;
 	padding-left: 10px;
 	padding-right: 10px;
+	background-color: #4aaaa5;
+	height: 75px;
+	padding-top: 15px;
 
 }
 p {
 	line-height: 1.6em;
+	font-size: 16px;
 }
 
 .logo {
@@ -62,7 +66,6 @@ p {
 }
 
 .navbar-nav {
-	float: right;
 	height: 75px;
 }
 
@@ -74,4 +77,65 @@ p {
 .navbar-brand {
 	background-color: #4aaaa5;
 	height: 75px;
+}
+
+.panel-footer {
+	border-top: 5px solid #4aaaa5;
+	background-color: #777777;
+	color: #cccccc;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+button {
+	background-color: #4aaaa5;
+	color: white;
+	border: 0px;
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+input {
+	width: 98%;
+	height: 25px;
+	color:#777777;
+	padding: 2px;
+	font-size: 14px;
+}
+
+#message-input {
+	height: 200px;
+}
+
+.img-container {
+	position: relative;
+	float: left;
+}
+
+.description {
+	position: absolute;
+	bottom: 30px;
+	left: 0px;
+	width: 260px;
+	background-color: #4aaaa5;
+	text-align: center;
+	height: 40px;
+	color: white;
+	font-size: 20px;
+	font-family: "Georgia", "Times New Roman", Times, Serif;	
+	padding-top: 10px;
+}
+
+.portfolio-img {
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-nav {
+		text-align:center;
+		height:120px;
+	}
 }
