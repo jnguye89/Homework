@@ -1,0 +1,11 @@
+-Press the enter key to start the game
+-Pick a random word from a list of words for the game (in an array)
+-split the word in a separate array, so that each letter is in a separate index [w, o, r, d]
+-create a new array with _ _ _ to match the number of letters in the above array
+-if a letter key is pressed, it compares it to the array with the selected word
+-if the letter matches a letter in the array, it inputs that letter into the _ _ _ array so that the text now displays with the filled letter
+	-var n = string.indexOf("letter picked")
+-the letter gets added to the "picked letters list"
+if the letter does not match, the letter gets added to the "picked letters list" and the number of guesses decreases
+-once the word is all filled, the wins number increases by one. 
+-a new blank word appears and the number of guesses resets

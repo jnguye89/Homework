@@ -1,0 +1,7 @@
+.container {
+	width: 960px;
+}
+
+#current-word {
+	font-size: 20px;
+}
