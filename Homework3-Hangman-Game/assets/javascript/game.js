@@ -33,8 +33,13 @@ function letterCheck(key) {
 		}
 		currentWord.textContent = unsolvedWordBlank.join(" ");
 		}
-	lettersGuessedArray.push(key);
-	lettersGuessed.textContent = lettersGuessedArray.join(", ");
+	for (var j=0; j<letters.length; j++) {
+		if (letters[j]===key){
+			lettersGuessedArray.push(key);
+			lettersGuessed.textContent = lettersGuessedArray.join(", ");
+		}
+	}	
+	
 }
 
 
