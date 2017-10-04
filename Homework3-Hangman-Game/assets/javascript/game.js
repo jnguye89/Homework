@@ -7,7 +7,9 @@ var unsolvedWordSplit = [];
 var unsolvedWordBlank = [];
 var currentWord = document.getElementById("current-word");
 var wins = document.getElementById("wins");
+
 var remainingGuesses = document.getElementById("guesses-remaining");
+
 var lettersGuessed = document.getElementById("guessed-letters");
 var lettersGuessedArray = [];
 
@@ -33,19 +35,32 @@ function letterCheck(key) {
 		}
 		currentWord.textContent = unsolvedWordBlank.join(" ");
 		}
+
+
+
 	for (var j=0; j<letters.length; j++) {
 		if (letters[j]===key){
 			lettersGuessedArray.push(key);
 			lettersGuessed.textContent = lettersGuessedArray.join(", ");
 		}
 	}	
-	
+
+	// Add an if statement here, that will check to see where the key is, if it retuns a -1 (not in the array), then have the guesses number go down by one
+
+
+
+	// add a statement here to check and see if there are anymore _ values in the array. If it returns a -1, have the wins number go up by one, and alert the player that they won
+	var stillBlank = unsolvedWordBlank.indexOf("_");
+
+	if (stillBlank === -1){
+		alert("You Won!");
+	}
+
 }
 
 
 document.onkeyup = function(event) {
 	if (event.key === "Enter"){
-		var j=10;
 		randomWord();
 		document.onkeyup = function(event){	
 			var key = event.key
@@ -53,8 +68,4 @@ document.onkeyup = function(event) {
 
 		}
 	}
-	else {
-
-	}
-
 }
