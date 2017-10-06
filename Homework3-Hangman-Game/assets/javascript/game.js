@@ -8,6 +8,7 @@ var unsolvedWordBlank = [];
 var currentWord = document.getElementById("current-word");
 var wins = document.getElementById("wins");
 var winsCount = 0;
+wins.textContent = winsCount;
 var remainingGuesses = document.getElementById("guesses-remaining");
 
 var lettersGuessed = document.getElementById("guessed-letters");
