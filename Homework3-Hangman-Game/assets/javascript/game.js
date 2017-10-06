@@ -65,6 +65,8 @@ function letterCheck(key) {
 
 	if (remainingGuessesCount < 0) {
 		alert("You Lose! Start Over");
+		winsCount = 0;
+		wins.textContent = winsCount;
 		randomWord();
 
 	}
