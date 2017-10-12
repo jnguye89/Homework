@@ -26,6 +26,8 @@ function randomCrystalGenerator() {
 }
 
 function assignCrystalValue() {
+
+	
 	$("#crystal1").attr("crystal-value", randomCrystalGenerator());
 	$("#crystal2").attr("crystal-value", randomCrystalGenerator());
 	$("#crystal3").attr("crystal-value", randomCrystalGenerator());
