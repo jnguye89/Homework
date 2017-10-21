@@ -9,77 +9,44 @@ var question = [
 	["Which of the following names is NOT one of the 7 dwarves in 'Snow White and the Seven Dwarfs?'", "Sneezy", "Grumpy", "Happy", "Lazy", 4, "../images/AnswerEight.jpeg"],
 	["In 'Pocahontas', what did Pocahontas see in her dream that made her believe that a change was coming?", "A spinning arrow", "A strange cloud formation", "A hawk circling her village", "A burning blue fire", 1, "../images/AnswerNine.png"],
 	["In 'Frozen', how many brothers does Hans have?", 8,12,14,15,2,"../images/AnswerTen.png"],
-]
+];
 
 
 $("#content").html("<h3>Instructions:</h3><p>You will have 30 seconds to answer each of the following questions. If no answer is picked within the 30 secons, the answer will be marked incorrect. Total score will be displayed at the end of the trivia questions.</p><button type='button' id='start'>Start!</button>")
 
-var correctCount=0;
-var wrongCount=0;
-var time = 30;
+var time;
+var correctCount;
+var wrongCount;
 
-$("#start").click(function() {
-	$("#content").html("");
-	for (var k=0; k<10; k++){
-		reset();
-		questionDisplay(k);
-		correctAnswer = question[k][5];
-		$(".answer").on("click", function() {
-			answer = $(this).attr("answer-number");
-			if (answer == correctAnswer) {
-				alert("You were right!");
-				correctCount++;
-			}		
-			else {
-				alert("You were wrong!");
-				wrongCount++;
-			}	
-
-			//console.log($(this).attr("answer-number"));
-
-
-
-
-
-		})
-
-	}
+$("#start").on("click", function() {
+	time = 31;
+	timer();
+	timerID = setInterval(timer,1000);
+	questionDisplay(0);
 	
 });
 
+
 var reset = function () {
 	$("#timer").html(time + " seconds");
+};
 
-}
+var timer = function() {
+	time--;
+	$("#timer").html(time + " seconds")
+
+};
 
 var questionDisplay = function(count) {
 	var currentQuestion = question[count][0];
 	$("#content").html("<div id='question'>" + currentQuestion + "</div>");
+	var answer = question[count][5];
 	for (var i=1; i<5; i++) {
 		var answerDisplay = question[count][i];
-		$("#content").append("<div class='answer'>" + answerDisplay + "</div>");
-		$(".answer").attr("answer-number", i);
-	}
-}
+		$("#content").append("<div class='answer' id='answer-"+i+"'>" + answerDisplay + "</div>");
+		$("#answer-"+i).attr("data", i);
+		console.log(i);
+		alert("You lost");
+	};
 
-var timeConverter = function(t) {
-	 //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
-    var minutes = Math.floor(t / 60);
-    var seconds = t - (minutes * 60);
-
-    if (seconds < 10) {
-      seconds = "0" + seconds;
-    }
-
-    if (minutes === 0) {
-      minutes = "00";
-    }
-
-    else if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    return minutes + ":" + seconds;
-}
-
- 
+};
