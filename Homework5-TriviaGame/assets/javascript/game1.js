@@ -6,7 +6,7 @@ var questionArray = [
 		answerThree: "Prince Charming", 
 		answerFour: "Prince Shrek", 
 		correctAnswer: "Prince Eric",
-		image: "../images/AnswerOne.jpeg",
+		image: "assets/images/AnswerOne.jpeg",
 	},
 	{
 		question: "What is the name of the animated science fiction comedy-drama film release in 2002 bout a Hawaiian girl and her unsual pet?",
@@ -15,7 +15,7 @@ var questionArray = [
 		answerThree: "Lilo & Stitch", 
 		answerFour: "Surfs Up!", 
 		correctAnswer: "Lilo & Stitch",
-		image: "../images/AnswerTwo.png",
+		image: "assets/images/AnswerTwo.png",
 	},
 	{
 		question: "In the Disney movie 'Beauty and the Beast', what is the name of Gaston's bumbling sidekick?", 
@@ -24,7 +24,7 @@ var questionArray = [
 		answerThree: "Belle", 
 		answerFour: "Chip", 
 		correctAnswer: "LeFou",
-		image: "../images/AnswerThree.jpeg",
+		image: "assets/images/AnswerThree.jpeg",
 	},
 	{
 		question: "What was the name of the kleptomaniac monkey in the Disney movie 'Aladdin'?", 
@@ -33,7 +33,7 @@ var questionArray = [
 		answerThree: "Jafar", 
 		answerFour: "Rajah", 
 		correctAnswer: "Abu",
-		image: "../images/AnswerFour.jpeg",
+		image: "assets/images/AnswerFour.jpeg",
 	},
 	{
 		question: "What is the name of Mickey Mouse's dog?", 
@@ -42,7 +42,7 @@ var questionArray = [
 		answerThree: "Kermit", 
 		answerFour: "Pluto", 
 		correctAnswer: "Pluto",
-		image: "../images/AnswerFive.gif",
+		image: "assets/images/AnswerFive.gif",
 	},
 	{
 		question: "In which US city was Walt Disney born?", 
@@ -51,7 +51,7 @@ var questionArray = [
 		answerThree: "Chicago, IL", 
 		answerFour: "Kissimmee, FL", 
 		correctAnswer: "Chicago, IL",
-		image: "../images/AnswerSix.jpg",
+		image: "assets/images/AnswerSix.jpg",
 	},
 	{
 		question: "In the movie 'Lion King', what was Simba's mother's name?", 
@@ -60,7 +60,7 @@ var questionArray = [
 		answerThree: "Sahara", 
 		answerFour: "Desert", 
 		correctAnswer: "Sarabi", 
-		image: "../images/AnswerSeven.png",
+		image: "assets/images/AnswerSeven.png",
 	},
 	{
 		question: "Which of the following names is NOT one of the 7 dwarves in 'Snow White and the Seven Dwarfs?'", 
@@ -69,7 +69,7 @@ var questionArray = [
 		answerThree: "Happy", 
 		answerFour: "Lazy", 
 		correctAnswer: "Lazy", 
-		image: "../images/AnswerEight.jpeg",
+		image: "assets/images/AnswerEight.jpeg",
 	},
 	{
 		question: "In 'Pocahontas', what did Pocahontas see in her dream that made her believe that a change was coming?", 
@@ -78,7 +78,7 @@ var questionArray = [
 		answerThree: "A hawk circling her village", 
 		answerFour: "A burning blue fire", 
 		correctAnswer: "A spinning arrow", 
-		image: "../images/AnswerNine.png",
+		image: "assets/images/AnswerNine.png",
 	},
 	{
 		question:"In 'Frozen', how many brothers does Hans have?", 
@@ -87,7 +87,7 @@ var questionArray = [
 		answerThree: "14",
 		answerFour: "15",
 		correctAnswer: "12",
-		image: "../images/AnswerTen.png",
+		image: "assets/images/AnswerTen.png",
 	}
 ]
 
@@ -109,10 +109,6 @@ $("#content").html("<h3>Instructions:</h3><p>You will have 30 seconds to answer 
  	}
  });
 
- var finalScore = function(){
- 	$("#content").html("Great job! You're all done. Final Score: <br><br>Number of questions correct: "+correctCount+"<br><br>Number of questions wrong: "+wrongCount);
- 	$("#timer").empty();
- }
 
 var currentQuestion = function(count){
 	questionDisplay(count);
@@ -125,14 +121,14 @@ var currentQuestion = function(count){
 		clearInterval(currentTimer);
 		var currentAnswer = $(this).attr("data-value")
 		if (currentAnswer === questionArray[count].correctAnswer) {
-			$("#content").html("You got the right answer! <br><br><button type='button' id='start'>next</button>");
-			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
+			$("#content").html("<p class='question'>You got the right answer! </p><br><br><button type='button' id='start'>next</button><br><br>");
+			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer' height='200px'/></div>");
 			correctCount++;
 			i++;
 		}
 		else {
-			$("#content").html("You got the wrong answer! <br><br><button type='button' id='start'>next</button>");
-			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
+			$("#content").html("<p class='question'>You got the wrong answer! </p><br><br><button type='button' id='start'>next</button><br><br>");
+			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer' height='200px'/></div>");
 			wrongCount++;
 			i++;
 		}
@@ -157,15 +153,15 @@ var questionTimeOut = function(count) {
 	$("#timer").html("Time over!");
 	clearTimeout(questionTimer);
 	clearInterval(currentTimer);
-	$("#content").html("You ran out of time! The correct answer was: <br><br>" + questionArray[count].correctAnswer + "<br><br><button type='button' id='start'>next</button>");
-	$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
+	$("#content").html("<p class='question'>You ran out of time! The correct answer was:</p> <br><br>" + questionArray[count].correctAnswer + "<br><br><button type='button' id='start'>next</button><br><br>");
+	$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer' height='200px'/></div>");
 };
 
 
 var questionDisplay = function(count){
 	
 	var a = $("<div>");
-	a.append(questionArray[count].question + "<br><br>");
+	a.append("<div class='question'>" +questionArray[count].question + "</div><br><br>");
 	a.append("<div class='answer' data-value='" + questionArray[count].answerOne + "'>" + questionArray[count].answerOne +  "</div><br><br>");
 	a.append("<div class='answer' data-value='" + questionArray[count].answerTwo + "'>" + questionArray[count].answerTwo +  "</div><br><br>");
 	a.append("<div class='answer' data-value='" + questionArray[count].answerThree + "'>" + questionArray[count].answerThree +  "</div><br><br>");
@@ -173,6 +169,11 @@ var questionDisplay = function(count){
 	$("#content").html(a);
 
 };
+
+ var finalScore = function(){
+ 	$("#content").html("<p id = 'grand'>Great job! You're all done. Final Score: <br><br>Number of questions correct: "+correctCount+"<br><br>Number of questions wrong: "+wrongCount +"</p>");
+ 	$("#timer").empty();
+ }
 
 
 
