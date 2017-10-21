@@ -91,39 +91,74 @@ var questionArray = [
 	}
 ]
 
-var correctCount;
-var wrongCount;
+var correctCount=0;
+var wrongCount=0;
 var time;
+var i=0;
+var questionTimer;
+var currentTimer;
 
-//Displays instructions and has initial button to start the quiz
-$("#content").html("<h3>Instructions:</h3><p>You will have 30 seconds to answer each of the following questions. If no answer is picked within the 30 secons, the answer will be marked incorrect. Total score will be displayed at the end of the trivia questions.</p><button type='button' id='start'>Start!</button>")
+$("#content").html("<h3>Instructions:</h3><p>You will have 30 seconds to answer each of the following questions. If no answer is picked within the 30 secons, the answer will be marked incorrect. Total score will be displayed at the end of the trivia questions.</p><button type='button' id='start'>Start!</button>");
 
-$("#start").on("click", function() {
-	questionDisplay(0);
+ $(document).on("click", "#start", function(){
+ 	if (i<10){
+ 		currentQuestion(i);
+ 	}
+ 	else {
+ 		finalScore();
+ 	}
+ });
+
+ var finalScore = function(){
+ 	$("#content").html("Great job! You're all done. Final Score: <br><br>Number of questions correct: "+correctCount+"<br><br>Number of questions wrong: "+wrongCount);
+ 	$("#timer").empty();
+ }
+
+var currentQuestion = function(count){
+	questionDisplay(count);
 	time = 30;	
-	$("#timer").html("Time left: " + time + " seconds");
-	var currentTimer = setInterval(timer, 1000);
-	var questionTimer = setTimeout(function(){questionTimeOut(0)},30000);
-});
-
-
+	$("#timer").html("Time left: " + time + " seconds<br><br>");
+	currentTimer = setInterval(timer, 1000);
+	questionTimer = setTimeout(function(){questionTimeOut(count)},3000);
+	$(".answer").on("click", function() {
+		clearTimeout(questionTimer);
+		clearInterval(currentTimer);
+		var currentAnswer = $(this).attr("data-value")
+		if (currentAnswer === questionArray[count].correctAnswer) {
+			$("#content").html("You got the right answer! <br><br><button type='button' id='start'>next</button>");
+			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
+			correctCount++;
+			i++;
+		}
+		else {
+			$("#content").html("You got the wrong answer! <br><br><button type='button' id='start'>next</button>");
+			$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
+			wrongCount++;
+			i++;
+		}
+	})
+}
 
 var timer = function() {
 	if (time > 0) {
 		time --;
-		$("#timer").html("Time left: " + time + " seconds");
+		$("#timer").html("Time left: " + time + " seconds<br><br>");
 	}
 	else if (time = 0){
-		$("#timer").html("Time over!");
-	}
+		$("#timer").html("Time over!<br><br>");
+		wrongCount ++;
+		}
 	else {
-		$("#timer").html("Time over!");
-	}
+		$("#timer").html("Time over!<br><br>");
+		}
 }
 
 var questionTimeOut = function(count) {
 	$("#timer").html("Time over!");
-	$("#content").html("You ran out of time! The correct answer was: <br><br>" + questionArray[count].correctAnswer + "<br><br><img src='" + questionArray[count].image +"' alt='Prince Eric!'>");
+	clearTimeout(questionTimer);
+	clearInterval(currentTimer);
+	$("#content").html("You ran out of time! The correct answer was: <br><br>" + questionArray[count].correctAnswer + "<br><br><button type='button' id='start'>next</button>");
+	$("#content").append("<div><img src='" +  questionArray[count].image  + "' alt='answer'/></div>");
 };
 
 
@@ -131,11 +166,10 @@ var questionDisplay = function(count){
 	
 	var a = $("<div>");
 	a.append(questionArray[count].question + "<br><br>");
-	a.append("<input type='radio' class='rbutton' name='answer' value='" + questionArray[count].answerOne + "'>   " + questionArray[count].answerOne + "<br>");
-	a.append("<input type='radio' class='rbutton' name='answer' value='" + questionArray[count].answerTwo + "'>   " + questionArray[count].answerTwo + "<br>");
-	a.append("<input type='radio' class='rbutton' name='answer' value='" + questionArray[count].answerThree + "'>   " + questionArray[count].answerThree + "<br>");
-	a.append("<input type='radio' class='rbutton' name='answer' value='" + questionArray[count].answerFour + "'>   " + questionArray[count].answerFour + "<br><br>");
-	a.append("<button type='button' id='submit'>Final Answer!</button");
+	a.append("<div class='answer' data-value='" + questionArray[count].answerOne + "'>" + questionArray[count].answerOne +  "</div><br><br>");
+	a.append("<div class='answer' data-value='" + questionArray[count].answerTwo + "'>" + questionArray[count].answerTwo +  "</div><br><br>");
+	a.append("<div class='answer' data-value='" + questionArray[count].answerThree + "'>" + questionArray[count].answerThree +  "</div><br><br>");
+	a.append("<div class='answer' data-value='" + questionArray[count].answerFour + "'>" + questionArray[count].answerFour +  "</div><br><br>");
 	$("#content").html(a);
 
 };
