@@ -115,7 +115,7 @@ var currentQuestion = function(count){
 	time = 30;	
 	$("#timer").html("Time left: " + time + " seconds<br><br>");
 	currentTimer = setInterval(timer, 1000);
-	questionTimer = setTimeout(function(){questionTimeOut(count)},3000);
+	questionTimer = setTimeout(function(){questionTimeOut(count)},30000);
 	$(".answer").on("click", function() {
 		clearTimeout(questionTimer);
 		clearInterval(currentTimer);
